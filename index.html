@@ -2,41 +2,45 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>配置</title>
+    <title>Tabchg配置</title>
 	<link href="bootstrap.css" rel="stylesheet" type="text/css" /> 
 	<style>
 		#tabchg-main{width:500px;height:500px;margin:0 auto;margin-top:50px;}
 		#tabchg-form{width:350px;margin:0 auto;margin-top:30px;}
-		.action-num-line{display:inline-block;width:10px;}
+		.action-key-item{display:inline-block;width:35px;height:30px;line-height:30px;cursor:pointer;}
 	</style>
 </head>
 <body>
 <div class="panel panel-default" id="tabchg-main">
   <div class="panel-heading">
-    <h3 class="panel-title">tabchg</h3>
+    <h3 class="panel-title">Tabchg配置</h3>
   </div>
   <div class="panel-body">
 	  <div id="tabchg-form">
-			<div style="height:37px;">
-				<span class="label label-default">1</span>
-				<span class="label label-success">2</span>
-				<span class="label label-default">3</span>
-				<span class="label label-default">4</span>
-				<span class="label label-default">5</span>
-				<span class="label label-default">6</span>
-				<span class="label label-default">7</span>
-				<span class="label label-default">8</span>
-				<span class="label label-default">9</span>
+			<div style="height:45px;">
+				<span class="label label-default action-key-item" key="1" is_selected="0">1</span>
+				<span class="label label-default action-key-item" key="2" is_selected="0">2</span>
+				<span class="label label-default action-key-item" key="3" is_selected="0">3</span>
+				<span class="label label-default action-key-item" key="4" is_selected="0">4</span>
+				<span class="label label-default action-key-item" key="5" is_selected="0">5</span>
+				<span class="label label-default action-key-item" key="6" is_selected="0">6</span>
+				<span class="label label-default action-key-item" key="7" is_selected="0">7</span>
+				<span class="label label-default action-key-item" key="8" is_selected="0">8</span>
+				<span class="label label-default action-key-item" key="9" is_selected="0">9</span>
 			</div>
 			<div class="form-group input-group">
-			   <span class="input-group-addon">支持的页数</span>
-			   <input type="text" class="form-control" id="basic-url">
+			   <span class="input-group-addon">页数</span>
+			   <input type="text" class="form-control" id="tab_count">
 			</div>
 			<div class="form-group input-group">
-			   <span class="input-group-addon">支持的域名</span>
-			   <input type="text" class="form-control" id="basic-url">
+			   <span class="input-group-addon">域名</span>
+			   <input type="text" class="form-control" id="host">
 			</div>
-	  		<button type="button" id="start-run" style="width:100%;margin-top:20px;" class="btn btn-primary">保存</button>
+			<div class="form-group input-group">
+			   <span class="input-group-addon">延时</span>
+			   <input type="text" class="form-control" id="delayed">
+			</div>
+	  		<button type="button" id="save-form" style="width:100%;margin-top:20px;" class="btn btn-primary">保存</button>
 	  </div>
   </div>
 </div>
@@ -44,4 +48,6 @@
 </body>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="bootstrap.min.js"></script>
+<script type="text/javascript" src="toast.js"></script>
+<script type="text/javascript" src="execute_script.js"></script>
 </html>
