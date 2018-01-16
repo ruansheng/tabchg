@@ -83,4 +83,9 @@ $(function(){
 		saveConfig();
 	});
 
+	$('#on-off-witch input').bootstrapSwitch({
+		onColor:"success",  
+        offColor:"warning",  
+	}); 
+	
 });
