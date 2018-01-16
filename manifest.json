@@ -27,7 +27,7 @@
     {
 	  "matches": ["http://*/*","https://*/*"], 
 	  "run_at": "document_end",
-      "js": ["content.js"]
+      "js": ["jquery.js","content.js"]
     }
 ]
 }

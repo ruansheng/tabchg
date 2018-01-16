@@ -19,6 +19,12 @@ chrome.extension.onMessage.addListener(function (request, sender, sendResponse) 
 	} else if(request.cmd == 'get_config') {
 		var data = getConfigData();
 		sendResponse({data:data});
+	} else if(request.cmd == 'move') {
+		curTab = sender.tab;
+		chrome.windows.get(sender.tab.windowId, {populate: true}, function (window) {
+			curWindow = window;
+			activeMove();
+		});		
 	}
 });
 
@@ -57,6 +63,7 @@ chrome.extension.onMessage.addListener(
 			}
 		});		
 });
+*/
 
 function activeMove(){
 	//最后一个了
@@ -74,5 +81,3 @@ function activeMove(){
 		}
 	}
 }
-
-*/

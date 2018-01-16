@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Tabchg配置</title>
 	<link href="bootstrap.css" rel="stylesheet" type="text/css" /> 
+	<link href="bootstrap-switch.css" rel="stylesheet" type="text/css" /> 
 	<style>
 		#tabchg-main{width:500px;height:500px;margin:0 auto;margin-top:50px;}
 		#tabchg-form{width:350px;margin:0 auto;margin-top:30px;}
@@ -40,6 +41,9 @@
 			   <span class="input-group-addon">延时</span>
 			   <input type="text" class="form-control" id="delayed">
 			</div>
+			<div class="switch" data-on="success" data-off="warning">
+			    <input type="checkbox" checked />
+			</div>
 	  		<button type="button" id="save-form" style="width:100%;margin-top:20px;" class="btn btn-primary">保存</button>
 	  </div>
   </div>
@@ -48,6 +52,7 @@
 </body>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrap-switch.min.js"></script>
 <script type="text/javascript" src="toast.js"></script>
 <script type="text/javascript" src="execute_script.js"></script>
 </html>
