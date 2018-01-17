@@ -46,12 +46,16 @@ function saveConfig(){
 	var host = $('#host').val();
 	var delayed = $('#delayed').val();
 
+	// 获取开关状态
+	var toggle_state = $('#on-off-witch div').hasClass('bootstrap-switch-on');
+
 	var data = {
 		cmd:"save_config",
 		keys:keys,
 		tab_count:tab_count,
 		host:host,
-		delayed:delayed
+		delayed:delayed,
+		toggle_state:toggle_state
 	};
 	chrome.extension.sendMessage(data, function (response) {
 		if(response.status == 1) {
