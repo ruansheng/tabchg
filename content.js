@@ -96,16 +96,17 @@ $(function(){
 		return true;
 	}
 	
-	function isAllowHost(data.host) {
+	function isAllowHost(host) {
 		
 	}
 	
-	function doMove(keyCode) {
+	function doMove() {
 		setTimeout(function(){				
+			console.log('doMove');
 			chrome.extension.sendMessage({cmd: "move"}, function (response) {
 						
 			});				
-		}, data.delayed);
+		}, 1000);
 	}
 	
 	function move(keyCode) {
