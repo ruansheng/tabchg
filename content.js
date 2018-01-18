@@ -125,10 +125,10 @@ $(function(){
 	}
 	
 	// 请求background移动tab
-	function doMove(delayed) {
-		console.log('in doMove:' + delayed);
+	function doMove(delayed, tab_count) {
+		console.log('in doMove:' + delayed + '--' + tab_count);
 		setTimeout(function(){				
-			chrome.extension.sendMessage({cmd: "move"}, function (response) {
+			chrome.extension.sendMessage({cmd: "move", tab_count: tab_count}, function (response) {
 						
 			});		
 		}, delayed);
@@ -161,7 +161,7 @@ $(function(){
 			}
 			
 			// 执行移动tab
-			doMove(data.delayed);
+			doMove(data.delayed, data.tab_count);
 		});
 	}
 	
