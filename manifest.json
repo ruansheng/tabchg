@@ -1,10 +1,10 @@
 {
-"name": "快速切换标签",
+"name": "标签切换",
 "version": "1.0.0",
 "manifest_version": 2,
 "description": "快速切换标签,一键自动下一个标签或者上一个标签。",
 "browser_action": {
-	"default_title": "自定义抓取页面数据",
+	"default_title": "标签切换",
 	"default_icon": "icon_128.png"
 },
 "background": {

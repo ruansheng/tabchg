@@ -2,19 +2,21 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Tabchg配置</title>
+    <title>标签切换配置</title>
 	<link href="bootstrap.css" rel="stylesheet" type="text/css" /> 
 	<link href="bootstrap-switch.min.css" rel="stylesheet" type="text/css" /> 
 	<style>
-		#tabchg-main{width:500px;height:500px;margin:0 auto;margin-top:50px;}
+		#tabchg-main{width:500px;height:550px;margin:0 auto;margin-top:30px;}
 		#tabchg-form{width:350px;margin:0 auto;margin-top:30px;}
 		.action-key-item{display:inline-block;width:35px;height:30px;line-height:30px;cursor:pointer;}
+		
+		#explain-box{width:400px;margin:0 auto;margin-top:30px;}
 	</style>
 </head>
 <body>
 <div class="panel panel-default" id="tabchg-main">
   <div class="panel-heading">
-    <h3 class="panel-title">Tabchg配置</h3>
+    <h3 class="panel-title">标签切换配置</h3>
   </div>
   <div class="panel-body">
 	  <div id="tabchg-form">
@@ -45,6 +47,15 @@
 			    <input id="" type="checkbox" checked data-on-text="开启" data-off-text="关闭"/>
 			</div>
 	  		<button type="button" id="save-form" style="width:100%;margin-top:20px;" class="btn btn-primary">保存</button>
+	  </div>
+	  <div id="explain-box">
+		  <ul>
+		    <li>配置支持的键盘按键，目前仅支持数字按键</li>
+			<li>配置切换的标签页数量，例如:3</li>
+			<li>配置支持按键生效的域名，例如:www.baidu.com</li>
+			<li>配置延迟切换的时间(单位毫秒)，例如:3000，延迟3秒</li>
+			<li>配置是否开启插件，关闭则都不生效，开启即可使用</li>
+		  </ul>
 	  </div>
   </div>
 </div>

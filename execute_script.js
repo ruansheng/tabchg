@@ -28,11 +28,11 @@ function getConfig(){
 		if(data.delayed != undefined) {
 			$('#delayed').val(data.delayed)
 		}		
-		if(data.toggle_state == undefined) {
+		if(data.toggle_state == undefined || data.toggle_state == '') {
 			$('#on-off-witch input').bootstrapSwitch({
 				onColor:"success",  
 				offColor:"warning",
-				state:true  
+				state:false  
 			}); 
 		} else if(data.toggle_state == true) {
 			$('#on-off-witch input').bootstrapSwitch({
