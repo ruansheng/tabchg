@@ -3,6 +3,7 @@ function getConfig(){
 	chrome.extension.sendMessage({cmd:"get_config"}, function (response) {
 		var data = response.data;
 		if(data == '') {
+			initBootstrapSwitch(false);
 			return;
 		}
 		if(data.keys != undefined && data.keys != '') {
@@ -29,25 +30,24 @@ function getConfig(){
 			$('#delayed').val(data.delayed)
 		}		
 		if(data.toggle_state == undefined || data.toggle_state == '') {
-			$('#on-off-witch input').bootstrapSwitch({
-				onColor:"success",  
-				offColor:"warning",
-				state:false  
-			}); 
+			initBootstrapSwitch(false);
 		} else if(data.toggle_state == true) {
-			$('#on-off-witch input').bootstrapSwitch({
-				onColor:"success",  
-				offColor:"warning",
-				state:true  
-			}); 
+			initBootstrapSwitch(true);
 		} else if(data.toggle_state == false) {
-			$('#on-off-witch input').bootstrapSwitch({
-				onColor:"success",  
-				offColor:"warning",
-				state:false  
-			}); 			
+			initBootstrapSwitch(false);
+		} else {
+			initBootstrapSwitch(false);
 		}		
 	});
+}
+
+/*初始化BootstrapSwitch*/
+function initBootstrapSwitch(state) {
+	$('#on-off-witch input').bootstrapSwitch({
+		onColor:"success",  
+		offColor:"warning",
+		state:state  
+	}); 
 }
 
 /*保存配置*/
@@ -85,11 +85,8 @@ function saveConfig(){
 	});
 }
 
-$(function(){
-	// 加载配置
-	getConfig();
-
-	// 点击选择按键效果
+/*点击选择按键效果*/
+function keynumClick() {
 	$('.action-key-item').click(function() {
 		var is_selected = $(this).attr('is_selected');
 		if(is_selected == 0) {
@@ -102,6 +99,14 @@ $(function(){
 			$(this).addClass('label-default');						
 		}
 	});
+}
+
+$(function(){
+	// 加载配置
+	getConfig();
+
+	// 点击选择按键效果
+	keynumClick();
 
 	// 保存配置
 	$('#save-form').click(function() {
